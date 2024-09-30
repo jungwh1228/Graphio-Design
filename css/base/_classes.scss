@@ -1,0 +1,35 @@
+// -------------------------------------------
+// h-group v-group
+// -------------------------------------------
+$directions: (
+        "vertical": v,
+        "hozizontal": h
+);
+$gaps: (0, 2, 4, 8, 12, 16, 20, 24, 32);
+
+@each $attr, $direction in $directions {
+  @each $gap in $gaps {
+    .#{$direction}-group#{if($gap != 0, "-#{$gap}", "")} {
+      @if $attr == "vertical" {
+        @include flex($vertical: flex-start, $direction: column);
+      } @else {
+        @include flex($horizontal: flex-start);
+      }
+
+      @if $gap != 0 {
+        gap: #{$gap}px;
+      }
+    }
+  }
+}
+
+// -------------------------------------------
+// 기타 클래스
+// -------------------------------------------
+.ellipsis {
+  @include ellipsis;
+}
+
+.caption-out {
+  @include caption-out;
+}

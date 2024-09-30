@@ -1,0 +1,16 @@
+.is-hidden {
+  display: none;
+}
+
+.is-hidden-text {
+  @include hidden-text;
+}
+
+// text-input, select, textarea(invalid)
+.is-valid {
+  border-color: $success-500;
+}
+
+.is-invalid {
+  border-color: $error-500;
+}

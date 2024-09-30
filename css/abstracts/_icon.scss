@@ -1,0 +1,25 @@
+// -------------------------------------------
+// 컬러
+// -------------------------------------------
+@mixin icon-color($color) {
+  fill: $color;
+  color: $color;
+}
+
+// * Usage *
+// .svg-icon {
+//   @include icon-color($primary-500);
+//  }
+
+
+// -------------------------------------------
+// 기본 스타일 정의
+// -------------------------------------------
+.svg-icon {
+  @include equal-size(20px);
+  @include icon-color($neutral-500);
+
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}

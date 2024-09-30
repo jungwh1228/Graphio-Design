@@ -1,22 +1,30 @@
 // 네임스페이스 생략
-
 // theme
-@use 'themes/_set-color' as *;
-@use 'themes/_set-theme' as *;
-
+@use "themes/set-color" as *;
+@use "themes/set-theme" as *;
 
 // variables
+@use "abstracts/variables" as *;
 
 // mixins
+@use "abstracts/fonts" as *;
+@use "abstracts/z-index" as *;
+@use "abstracts/breakpoints" as *;
+@use "abstracts/box-shadow" as *;
+@use "abstracts/retina" as *;
+@use "abstracts/mixins-helper" as *;
 
-//base
-@use 'base/_base' as *; 
+// tailwindCSS Reset
+@use "tailwind/tailwind-base" as *;
+
+// base
+@use "base/base" as *;
 
 // class
-
+@use "abstracts/icon" as *;
+@use "themes/theme" as *;
 
 // Design Component
-
 
 // Develop Component
 
@@ -24,5 +32,8 @@
 
 // pages
 
-//Utility Class
-@use 'base/_classes' as *; 
+// Utility Class
+@use "base/classes" as *;
+@use "tailwind/tailwind-utilities" as *;
+
+//vendors

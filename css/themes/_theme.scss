@@ -1,0 +1,37 @@
+// -------------------------------------------
+// color themes - 아이콘 / 텍스트 주요 컬러 테마
+// -------------------------------------------
+$theme-colors: (
+        "black": $neutral-800,
+        "white": $neutral-100,
+        "neutral": $neutral-400,
+        "primary": $primary-500,
+        "secondary": $secondary-500,
+        "info": $info-500,
+        "success": $success-500,
+        "warning": $warning-500,
+        "error": $error-500,
+);
+
+@each $attr, $color in $theme-colors {
+  // SVG 아이콘 색상 설정
+  .svg-icon-#{$attr} {
+    @include icon-color($color);
+  }
+
+  // 텍스트 색상 설정
+  .color-#{$attr} {
+    color: $color;
+  }
+
+  // 배경 색상 설정
+  .bg-#{$attr} {
+    background-color: $color;
+
+    @if $color == $neutral-100 {
+      color: $neutral-800;
+    } @else if $color == $neutral-800 {
+      color: $neutral-100;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+// -------------------------------------------
+// flex 상하 좌우 정렬
+// -------------------------------------------
+@mixin flex(
+  $display: flex,
+  $vertical: center,
+  $horizontal: center,
+  $direction: null,
+  $gap: null
+) {
+  display: $display;
+  align-items: $vertical;
+  justify-content: $horizontal;
+  flex-direction: $direction;
+
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
+// -------------------------------------------
+// 동일한 너비 높이 지정 - 아이콘, ui등 사용
+// -------------------------------------------
+@mixin equal-size($size) {
+  @if type-of($size) == number {
+    width: $size;
+    height: $size;
+  } @else {
+    @error '유효하지 않은 입력값입니다. 숫자 값으로 입력하세요.';
+  }
+}
+
+// * Usage *
+// .svg-icon {
+//   @include equal-size(32px);
+// }
+
+// -------------------------------------------
+// 말줄임 -한 줄, 한 줄 이상
+// -------------------------------------------
+@mixin ellipsis($width: null) {
+  display: block;
+
+  @apply truncate;
+
+  @if $width {
+    width: $width;
+  }
+}
+
+@mixin ellipsis-multi($line-height: 1.2, $lines: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  max-height: $line-height * $lines;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+// -------------------------------------------
+// 숨김
+// -------------------------------------------
+
+// text 숨김 (접근성)
+@mixin hidden-text {
+  @apply sr-only;
+}
+
+@mixin hidden-input {
+  @include hidden-text;
+
+  top: 0;
+  left: 0;
+}
+
+// table caption 숨김
+@mixin caption-out {
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+// scroll 숨김
+@mixin scroll-hidden {
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* (Chrome, Safari) */
+  }
+}
