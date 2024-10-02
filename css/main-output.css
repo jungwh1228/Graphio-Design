@@ -739,6 +739,8 @@ em {
     color: var(--neutral-0, #fff);
   }
 .svg-icon {
+  width: 20px;
+  height: 20px;
   fill: var(--neutral-500, #98a2b3);
   color: var(--neutral-500, #98a2b3);
   display: inline-block;
@@ -1015,8 +1017,8 @@ em {
 }
 
 .test-02 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 20px;
+  line-height: 28px;
   border: 1px solid;
   padding: 12px;
 }
@@ -1100,4 +1102,5 @@ em {
 .is-invalid {
   border-color: var(--error-500, #e24b25);
 }
+
 /*# sourceMappingURL=main-output.css.map */

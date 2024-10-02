@@ -1,0 +1,15 @@
+// TODO: [퍼블리싱] 사이즈/변수 재정의 및 리팩토링 : 페이지 디자인 나오면 breakpoints 다시 잡을 것.
+@mixin respond-to-desktop {
+  @media screen and (max-width: 1920px) {
+    @content;
+  }
+}
+
+// * Usage *
+// .selector {
+//   color: red;
+
+//   @include respond-to-desktop {
+//     color: blue;
+//   }
+// }
