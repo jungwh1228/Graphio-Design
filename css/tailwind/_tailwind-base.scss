@@ -1,10 +1,14 @@
+@use '../themes/set-color' as *;
+@use '../abstracts/fonts' as *;
+
+
 @tailwind base;
 
 @layer base {
-  // @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular', 400);
-  // @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium', 500);
-  // @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-SemiBold', 600);
-  // @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold', 700);
+  @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular', 400);
+  @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium', 500);
+  @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-SemiBold', 600);
+  @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold', 700);
 
 
   * {

@@ -1,3 +1,7 @@
+@use '../abstracts/mixin-helper' as *;
+@use '../abstracts/fonts' as *;
+
+
 // -------------------------------------------
 // h-group v-group
 // -------------------------------------------
@@ -34,14 +38,9 @@ $gaps: (0, 2, 4, 8, 12, 16, 20, 24, 32);
   @include caption-out;
 }
 
-.test {
-  @include font-size('15');
-
-  padding: $spacing-12;
-}
-
+//임시
 .test-02 {
- font-size: 15px;
-
+  @include font-size('20');
+  border: 1px solid;
   padding: 12px;
 }
