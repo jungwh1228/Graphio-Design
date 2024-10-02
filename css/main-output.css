@@ -1,0 +1,19 @@
+/* Error: Undefined variable.
+ *    ,
+ * 17 |   --neutral-0: #{setColor($config, $key, neutral-0)};
+ *    |                           ^^^^^^^
+ *    '
+ *   css\themes\_set-theme.scss 17:27  setTheme()
+ *   css\themes\_set-theme.scss 64:5   @use
+ *   css\main.scss 4:1                 root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 17 \2502    --neutral-0: #{setColor($config, $key, neutral-0)};\a    \2502                            ^^^^^^^\a    \2575 \a   css\\themes\\_set-theme.scss 17:27  setTheme()\a   css\\themes\\_set-theme.scss 64:5   @use\a   css\\main.scss 4:1                 root stylesheet";
+}

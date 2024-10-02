@@ -16,7 +16,7 @@
 // 기본 스타일 정의
 // -------------------------------------------
 .svg-icon {
-  @include equal-size(20px);
+  // @include equal-size(20px);
   @include icon-color($neutral-500);
 
   display: inline-block;

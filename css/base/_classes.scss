@@ -33,3 +33,15 @@ $gaps: (0, 2, 4, 8, 12, 16, 20, 24, 32);
 .caption-out {
   @include caption-out;
 }
+
+.test {
+  @include font-size('15');
+
+  padding: $spacing-12;
+}
+
+.test-02 {
+ font-size: 15px;
+
+  padding: 12px;
+}

@@ -1,10 +1,10 @@
 @tailwind base;
 
 @layer base {
-  @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular', 400);
-  @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium', 500);
-  @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-SemiBold', 600);
-  @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold', 700);
+  // @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular', 400);
+  // @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium', 500);
+  // @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-SemiBold', 600);
+  // @include font-face('Pretendard', 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold', 700);
 
 
   * {
@@ -16,7 +16,7 @@
   }
 
   html {
-    @include font-family('pretendard');
+    // @include font-family('pretendard');
     @include font-size('14');
 
     @apply antialiased;
