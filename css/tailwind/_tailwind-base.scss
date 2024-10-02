@@ -20,7 +20,7 @@
   }
 
   html {
-    // @include font-family('pretendard');
+    @include font-family('pretendard');
     @include font-size('14');
 
     @apply antialiased;

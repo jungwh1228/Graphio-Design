@@ -7,7 +7,6 @@
     "tailwindcss": "^3.4.13"
   },
   "scripts": {
-    "build:css": "sass ./css/main.scss ./css/main.css && postcss ./css/main.css -o ./css/main-output.css",
-   "watch:css": "sass --watch ./css/main.scss:./css/main.css && postcss ./css/main.css -o ./css/main-output.css --watch"
+    "build:css": "sass css/main.scss dist/main.css && postcss dist/main.css -o dist/main.css"
   }
 }
