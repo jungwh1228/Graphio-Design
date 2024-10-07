@@ -1,0 +1,67 @@
+@use './common/input' as *;
+@use '../abstracts/mixin-helper' as *;
+@use '../abstracts/variables' as *;
+@use '../themes/themes.scss' as *;
+
+.checkbox {
+  &-label {
+    &::before {
+      border-radius: $border-radius-2;
+    }
+
+    &::after {
+      left: 3.5px;
+      top: 6px;
+      width: 9px;
+      height: 5px;
+      border-left: 1.7px solid $neutral-0;
+      border-bottom: 1.7px solid $neutral-0;
+      transform: scale(0) rotate(-45deg);
+    }
+
+    &:not(:has(.checkbox-subtext)) {
+      .checkbox-text {
+        @include ellipsis;
+      }
+    }
+  }
+
+  &-input:checked + label {
+    &::after {
+      transform: scale(1) rotate(-45deg);
+    }
+  }
+
+  // 부분 선택
+  &-indeterminate {
+    .checkbox-input:checked + .checkbox-label {
+      &::after {
+        transform: scale(1) rotate(0deg);
+        top: 6px;
+        left: 3.5px;
+        width: 9px;
+        border-left-width: 0;
+      }
+    }
+  }
+
+  // sm 사이즈
+  &-sm {
+    .checkbox-label::after {
+      left: 3px;
+      top: 6px;
+      width: 8.5px;
+      height: 4.5px;
+    }
+
+    &.checkbox-indeterminate {
+      .checkbox-input:checked + .checkbox-label {
+        &::after {
+          top: 5px;
+          left: 4px;
+          width: 8px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use './common/input' as *;
+@use '../abstracts/mixin-helper' as *;
+@use '../abstracts/variables' as *;
+@use '../themes/themes.scss' as *;
+
+.radio {
+  &-group {
+    @include flex;
+
+    gap: $spacing-12;
+  }
+
+  &-input {
+    &:checked + label {
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &-label {
+    &::before {
+      border-radius: $border-radius-round;
+    }
+
+    &::after {
+      @include equal-size(6px);
+
+      top: 7px;
+      left: 5px;
+      border-radius: $border-radius-round;
+      background-color: $neutral-0;
+      transform: scale(0);
+    }
+  }
+
+  &-sm {
+    .radio {
+      &-label {
+        &::after {
+          @include equal-size(5px);
+
+          left: 4.5px;
+          top: 6.5px;
+        }
+      }
+    }
+  }
+}

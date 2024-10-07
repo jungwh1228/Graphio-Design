@@ -80,29 +80,6 @@
         outline: 1px dashed $neutral-900;
       }
     }
-
-    // TODO: component > common > input에 옮길 것
-    &:disabled {
-      & + label,
-      & + label:hover {
-        color: $neutral-300 !important;
-        cursor: not-allowed;
-
-        &::before {
-          box-shadow: none;
-          border-color: $neutral-200;
-          background-color: $neutral-200;
-        }
-
-        svg {
-          color: $neutral-300 !important;
-        }
-
-        span {
-          color: $neutral-300 !important;
-        }
-      }
-    }
   }
 
   a:active,

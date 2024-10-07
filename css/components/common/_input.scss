@@ -1,0 +1,207 @@
+@use '../../abstracts/abstracts' as *;
+@use '../../base/base' as *;
+@use '../../themes/themes' as *;
+
+$input-classes: checkbox, radio;
+
+@each $input in $input-classes {
+  .#{$input} {
+    position: relative;
+
+    @include flex($vertical: flex-start);
+
+    &-input {
+      @include hidden-input;
+
+      &:checked {
+        & + label {
+          &::before {
+            box-shadow: none;
+            background-color: $primary-500;
+            border-color: $primary-500;
+          }
+
+          &:hover::before {
+            background-color: $primary-700;
+            border-color: $primary-700;
+          }
+
+          &:active::before {
+            @include box-shadow('focus');
+
+            border-color: $primary-900;
+            background-color: $primary-900;
+          }
+        }
+
+        &:disabled {
+          & + label::after  {
+            display: block;
+          }
+        }
+      }
+
+      &:disabled {
+        & + label,
+        & + label:hover {
+          cursor: not-allowed;
+
+          &::before {
+            box-shadow: none;
+            border-color: $neutral-400;
+            background-color: $neutral-400;
+          }
+        }
+
+        &-label {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &-label {
+      @include flex($horizontal: flex-start);
+
+      white-space: nowrap;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        box-sizing: border-box;
+      }
+
+      &::before {
+        @include equal-size(16px);
+
+        content: "";
+        flex-shrink: 0;
+        display: block;
+        margin-right: $spacing-6;
+        background-color: $neutral-0;
+        border: 1.3px solid $neutral-500;
+        box-shadow: inset 1px 2px 3px 0 rgba(0, 0, 0, 0.15);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        background: none;
+      }
+
+      &:hover::before {
+        border-color: $neutral-600;
+      }
+
+      &:active::before {
+        @include box-shadow('focus');
+      }
+
+      &:has(.hidden-text) {
+        &::before {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &-text {
+      font-weight: 500;
+      color: $neutral-800;
+    }
+
+    &-subtext {
+      margin-left: $spacing-2;
+      font-weight: 400;
+      color: $neutral-600;
+    }
+
+    &-sm {
+      .#{$input}-label {
+          @include font-size('12');
+
+        &::before {
+            @include equal-size(14px);
+
+            margin-right: $spacing-6;
+        }
+      }
+    }
+  }
+
+  .#{$input}-button {
+    @include flex;
+
+    position: relative;
+    background-color: $neutral-0;
+
+    &-input {
+      @include hidden-input;
+
+      &:checked {
+        & + label {
+          background-color: $primary-500;
+          color: $neutral-0;
+          border-color: $primary-500;
+
+          .svg-icon {
+            @include icon-color($neutral-0);
+          }
+        }
+      }
+
+      &:disabled + label {
+        background-color: $neutral-100;
+      }
+    }
+
+    &-label {
+      @include flex($horizontal: flex-start);
+      @include font-size('13');
+
+      gap: $spacing-2;
+      font-weight: 600;
+      height: 32px;
+      padding: 0 $spacing-12;
+      color: $neutral-700;
+      cursor: pointer;
+      border: 1px solid $neutral-200;
+      border-radius: $border-radius-4;
+
+      &:hover {
+        background-color: $neutral-100;
+      }
+    }
+
+    .svg-icon {
+      @include equal-size(20px);
+    }
+
+    &-sm {
+      .#{$input}-button {
+        &-label {
+          @include font-size('12');
+
+          height: 28px;
+          padding: 0 $spacing-8;
+
+          .svg-icon {
+            @include equal-size(18px);
+          }
+        }
+      }
+    }
+
+    .count-text {
+      &::after {
+        content: "";
+        position: relative;
+        display: inline-block;
+        background: $neutral-200;
+        width: 1px;
+        height: 10px;
+        margin: 0 $spacing-8;
+      }
+    }
+  }
+}
